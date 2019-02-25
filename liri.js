@@ -1,8 +1,11 @@
 require("dotenv").config();
+    console.log(process.argv);
 
 //Constructors
+var axios = require("axios");
 var Spotify = require('node-spotify-api');
 var BandsInTown = require('bandsInTown');
+var fs = require("fs");
 
 
 //Instructions from gitlab
