@@ -5,6 +5,7 @@ var keys = require("./keys.js");
 var axios = require("axios");
 var Spotify = require('node-spotify-api');
 var spotifyAPI = new Spotify(keys.spotify);
+
 // var BandsInTown = require('bandsInTown');
 var request = require('request')
 var fs = require("fs");
@@ -12,13 +13,21 @@ var fs = require("fs");
 
 
  
-spotifyAPI.search({ type: 'track', query: 'stayin alive' }, function(err, data) {
+spotifyAPI.search({ type: 'track', query: 'Redbone' }, function(err, data) {
   if (err) {
     return console.log('Error occurred: ' + err);
   }
  
 console.log(data.tracks.items[0]); 
 });
+
+var givenCommands = function () {
+    if (command === "spotify-this-song") {
+        if (info === "") {
+            info = "Redbone"
+        }
+    }
+}
 
 //need to add these liri commands?
 // concert-this
@@ -36,3 +45,5 @@ console.log(data.tracks.items[0]);
 
 //     console.log(JSON.stringify(result, null, 2));
 // });
+
+runGivenCommands();
