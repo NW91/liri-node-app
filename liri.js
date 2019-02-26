@@ -1,30 +1,38 @@
 require("dotenv").config();
-    console.log(process.argv);
+var keys = require("./keys.js");
 
 //Constructors
 var axios = require("axios");
 var Spotify = require('node-spotify-api');
-var BandsInTown = require('bandsInTown');
+var spotifyAPI = new Spotify(keys.spotify);
+// var BandsInTown = require('bandsInTown');
+var request = require('request')
 var fs = require("fs");
 
 
-//Instructions from gitlab
-var keys = require("./keys.js");
-var spotify = new Spotify(keys.spotify);
 
-//need to add these commands?
+ 
+spotifyAPI.search({ type: 'track', query: 'stayin alive' }, function(err, data) {
+  if (err) {
+    return console.log('Error occurred: ' + err);
+  }
+ 
+console.log(data.tracks.items[0]); 
+});
+
+//need to add these liri commands?
 // concert-this
 // spotify-this-song 
 // movie-this 
 // do-what-it-says
 
-var bandsInTown2 = process.argv[2]
+// var bandsInTown2 = process.argv[2]
 // Name of the venue
 // Venue location
 // Date of the Event (use moment to format this as "MM/DD/YYYY")
 
-bandsInTown2.find({search: bandsInTown, name: "venue", location: "place", date: "MM/DD/YYYY"}, function(err, result) {
-    if (err) console.log(err)
+// bandsInTown2.find({search: bandsInTown, name: "venue", location: "place", date: "MM/DD/YYYY"}, function(err, result) {
+//     if (err) console.log(err)
 
-    console.log(JSON.stringify(result, null, 2));
-});
+//     console.log(JSON.stringify(result, null, 2));
+// });
