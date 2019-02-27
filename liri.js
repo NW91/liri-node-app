@@ -60,7 +60,7 @@ var runGivenCommands = function () {
             }
         );
         } else if (commands === "concert-this") {
-            var queryUrl = "https://rest.bandsintown.com/artists/" + media + "/events?app_id=codingbootcamp";
+            var queryUrl = "https://rest.bandsintown.com/artists/" + info + "/events?app_id=codingbootcamp";
 
             axios.get(queryUrl).then(
                 function(response) {
