@@ -45,7 +45,7 @@ var runGivenCommands = function () {
             info = "Mr. Nobody";
         }
 
-        var queryUrl = "http://www.omdbapi.com/?t=" + name + "&y=&plot=short&apikey=trilogy";
+        var queryUrl = "http://www.omdbapi.com/?t=" + info + "&y=&plot=short&apikey=trilogy";
 
         axios.get(queryUrl).then(
             function(response) {
