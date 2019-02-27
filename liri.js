@@ -29,7 +29,7 @@ var runGivenCommands = function () {
         if (info === "") {
             info = "Redbone"
         }
-        spotifyAPI.search({ type: 'track', query: 'media', limit: 1 }, function(err, data) {
+        spotifyAPI.search({ type: 'track', query: 'info', limit: 1 }, function(err, data) {
             if (err) {
               return console.log('Error occurred: ' + err);
             }
@@ -67,8 +67,8 @@ var runGivenCommands = function () {
 
                     var eventTime = response.data[0].datetime;
                     
-                    console.log("Venue: " + response.data[0].venue.name);
-                    console.log("Venue Location " + response.data[0].venue.city);
+                    console.log("Venue Name: " + response.data[0].venue.name);
+                    console.log("Venue Location: " + response.data[0].venue.city);
                     console.log("Date of Event: " + moment(eventTime).format("MM/DD/YYYY"));
                 }
             );
