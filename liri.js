@@ -70,14 +70,23 @@ var runGivenCommands = function () {
                     console.log("Venue: " + response.data[0].venue.name);
                     console.log("Venue Location " + response.data[0].venue.city);
                     console.log("Date of Event: " + moment(eventTime).format("MM/DD/YYYY"));
+                }
+            );
+        } else if (commands === "do-what-it-says") {
 
+            fs.readFile("random.txt", "utf8", function(error, data) {
+                if (error) {
+                    return console.log(error);
+                }
+                
+                var dataArr = data.split(",");
 
-        commands = dataArr[0];
-        info = dataArr[1];
-        runGivenCommands();
-        });
+                commands = dataArr[0];
+                info = dataArr[1];
+                runGivenCommands();
+                });
 
-    }
+        }
 
 }
 
