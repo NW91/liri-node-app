@@ -24,7 +24,7 @@ for (var i=3; i<nodeArgs.length; i++) {
 // var request = require('request')
 
 
-var givenCommands = function () {
+var runGivenCommands = function () {
     if (commands === "spotify-this-song") {
         if (info === "") {
             info = "Redbone"
@@ -34,13 +34,13 @@ var givenCommands = function () {
               return console.log('Error occurred: ' + err);
             }
 
-    console.log("Artist: " + data.tracks.items[0].artists[0].name);
-    console.log("Song Name: " + data.tracks.items[0].name);
-    console.log("Preview Link: " + data.tracks.items[0].external_urls.spotify);
-    console.log("Album: " + data.tracks.items[0].album.name);
+        console.log("Artist: " + data.tracks.items[0].artists[0].name);
+        console.log("Song Name: " + data.tracks.items[0].name);
+        console.log("Preview Link: " + data.tracks.items[0].external_urls.spotify);
+        console.log("Album: " + data.tracks.items[0].album.name);
     });
 
-} else if (command === "movie-this") {
+} else if (commands === "movie-this") {
         if (info === "") {
             info = "Mr. Nobody";
         }
@@ -56,13 +56,20 @@ var givenCommands = function () {
                 console.log("Country Origin: " + response.data.Country);
                 console.log("Movie Language: " + response.data.Language);
                 console.log("Plot: " + response.data.Plot);
-                console.log("Actors List: " +response.data.Actors);
+                console.log("Actors List: " + response.data.Actors);
             }
         );
+        } else if (commands === "concert-this") {
+            var queryUrl = "https://rest.bandsintown.com/artists/" + media + "/events?app_id=codingbootcamp";
 
-        console.log("Venue: " + response.data[0].venue.name);
-        console.log("Venue Location " + response.data[0].venue.city);
-        console.log("Date of Event: " + moment(eventTime).format("MM/DD/YYYY"));
+            axios.get(queryUrl).then(
+                function(response) {
+
+                    var eventTime = response.data[0].datetime;
+                    
+                    console.log("Venue: " + response.data[0].venue.name);
+                    console.log("Venue Location " + response.data[0].venue.city);
+                    console.log("Date of Event: " + moment(eventTime).format("MM/DD/YYYY"));
 
 
         commands = dataArr[0];
