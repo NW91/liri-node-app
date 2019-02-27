@@ -1,17 +1,16 @@
 # liri-node-app
 
-A command line node application that takes in 4 commands, searches for the data, and then gives you something back. (Shown below in screen shots)
+Run Down of Usage: A command line node application that takes in 4 different commands, searches for the data, and then returns something back based on what you're seaching for. (Shown below in screen shots)
+
+1- In your command line, typing in the following: 
+node liri.js concert-this <"name of the artist"> 
+Should return the name of the venue, what city the concert is in, and the date of the event if the information is avaialble.
+
+Please refer to "Concert-this" Image in the Functionality Screenshot Images folder in this github for a visual example.
 
 
+2- In your command line, typing in the following:
+node liri.js movie-this <"name of the movie">
+Should return the title of the movie, the year the movie came out, IMDB rating, Rotten Tomatoes Rating, Country Origin of the film, the language spoken in the movie, a brief plot summary of the film, and the actor list if the information is available.
 
-Create and use a standard GitHub repository. As this is a CLI App, it cannot be deployed to GitHub pages or Heroku. This time you'll need to include screenshots, a GIF, and/or a video showing us that you have the app working with no bugs. You can include these screenshots/GIFs or a link to a video in a README.md file.
-
-
-Include screenshots (or a GIF/Video) of the typical user flow of your application. Make sure to include the use of Spotify, Bands in Town, and OMDB.
-Include any other screenshots you deem necessary to help someone who has never been introduced to your application understand the purpose and function of it. This is how you will communicate to potential employers/other developers in the future what you built and why, and to show how it works.
-Because screenshots (and well-written READMEs) are extremely important in the context of GitHub, this will be part of the grading.
-
-
-If you haven't written a markdown file yet, click here for a rundown, or just take a look at the raw file of these instructions.
-
-To run this application, you will need your own .env file for it to work.
+Please refer to "Movie-this" Image in the Functionality Screenshot Images folder in this github for a visual example.
