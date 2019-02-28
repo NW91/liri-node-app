@@ -27,9 +27,9 @@ for (var i=3; i<nodeArgs.length; i++) {
 var runGivenCommands = function () {
     if (commands === "spotify-this-song") {
         if (info === "") {
-            info = "Redbone"
+            info = "redbone childish gambino";
         }
-        spotifyAPI.search({ type: 'track', query: 'info', limit: 1 }, function(err, data) {
+        spotifyAPI.search({ type: 'track', query: info, limit: 1 }, function(err, data) {
             if (err) {
               return console.log('Error occurred: ' + err);
             }
