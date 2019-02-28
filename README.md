@@ -22,4 +22,6 @@ Please refer to the "Spotify-this-song" Image in the Functionality Screenshot Im
 
 4- In your command lin, type in the following:
 node liri.js do-what-it-says
-Should return the 
+Should use the fs node package and return whatever is in the random.txt file. In this case, it will use the spotify-this-song command and give data back specifically for the I Want it That Way Backstreet Boys song as specified in the file. 
+
+Please refer to the "Do-what-it-says" Image in the Functionality Screenshot Images folder in this github for a visual example.
